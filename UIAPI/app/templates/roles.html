@@ -132,11 +132,17 @@ span.psw {
     {% endfor %}
     {% endif %}
 
-<h2>Admin Login Form</h2>
+<h2>Admin Roles Registration Form</h2>
 
 <button onclick="document.getElementById('id01').style.display='block'" style="width:auto;">open</button>
 
 <div id="id01" class="modal">
+
+  {% if msg %}
+  {% for i in msg %}
+  <h1>{{i}}</h1>
+  {% endfor %}
+  {% endif %}
   
   <form class="modal-content animate"  method="post" action="/roles-data/">
     {% csrf_token %}
